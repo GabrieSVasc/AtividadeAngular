@@ -1,0 +1,13 @@
+<div *ngIf="comprador">
+    <br>
+    <p class="fs-1 text-center">Editando informações do comprador {{comprador.nome}}</p>
+    <app-formulario 
+        (onSubmit)="editHandler($event)" 
+        [compradorData]="comprador" 
+        [btnText]="btnText"
+    ></app-formulario>
+</div>
+<br><br>
+<div class="text-center">
+    <button class="btn btn-outline-info btn-lg" (click)="voltar()"><- Voltar</button>
+</div>

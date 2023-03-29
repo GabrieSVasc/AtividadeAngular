@@ -1,0 +1,18 @@
+<div *ngIf="comprador">
+    <br>
+    <p class="fs-1 text-center">Informações sobre {{comprador.nome}}</p>
+    <br>
+    <p class="fs-4">
+        Nome do comprador: {{comprador.nome}} <br><br>
+        Produto comprado: {{comprador.produto}} <br><br>
+        Nome do vendedor: {{comprador.vendedor}}
+    </p>
+    <div class="text-center">
+        <button class="btn btn-outline-danger btn-lg" (click)="removeHandler(comprador.id!)">Excluir</button>
+        <a class="btn btn-outline-secondary btn-lg" routerLink="/compradores/editar/{{comprador.id}}">Editar</a>
+    </div>
+</div>
+<br><br>
+<div class="text-center">
+    <button class="btn btn-outline-info btn-lg" (click)="voltar()"><- Voltar</button>
+</div>

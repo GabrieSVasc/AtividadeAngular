@@ -1,0 +1,30 @@
+<form (ngSubmit)="submit()" [formGroup]="compradorForm" #formDir="ngForm">
+    <div>
+        <input type="hidden" formControlName="id">
+    </div>
+    <div>
+        <label for="nome" class="form-label">Nome:</label>
+        <input class="form-control" type="text" placeholder="Digite o nome" formControlName="nome" required>
+        <div *ngIf="nome.invalid && formDir.submitted" class="validation-error">
+            <p>O nome é obrigatório</p>
+        </div>
+    </div>
+    <div>
+        <label for="produto" class="form-label">Produto:</label>
+        <input class="form-control" type="text" placeholder="Digite o produto comprado" formControlName="produto" required>
+        <div *ngIf="produto.invalid && formDir.submitted" class="validation-error">
+            <p>O produto é obrigatório</p>
+        </div>
+    </div>
+    <div>
+        <label for="vendedor" class="form-label">Nome do vendedor:</label>
+        <input class="form-control" type="text" placeholder="Digite o nome do vendedor:" formControlName="vendedor" required>
+        <div *ngIf="vendedor.invalid && formDir.submitted" class="validation-error">
+            <p>O nome do vendedor é obrigatório</p>
+        </div>
+    </div>
+    <br>
+    <div class="d-grid gap-2">
+        <input class="btn btn-outline-secondary" type="submit" value="{{btnText}}">
+    </div>
+</form>
