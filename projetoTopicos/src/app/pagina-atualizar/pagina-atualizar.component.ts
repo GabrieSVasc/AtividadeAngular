@@ -33,9 +33,9 @@ export class PaginaAtualizarComponent {
     formData.append('vendedor', compradorData.vendedor)
 
     await this.compradorService.updateComprador(id!, formData).subscribe()
-    this.router.navigate(['/']);
+    this.voltar();
   }
   voltar(){
-    this.router.navigate(['/compradores/'+this.comprador.id]);
+    this.router.navigate(['/']);
   }
 }
